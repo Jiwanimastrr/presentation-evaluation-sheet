@@ -318,269 +318,347 @@
         }
 
         .result-paper {
-            background-color: #fcfbf9;
-            background-image: radial-gradient(#d5d4d0 1px, transparent 1px);
-            background-size: 20px 20px;
-            /* Rough sketchbook */
-            border-radius: 20px;
-            border: 1px solid #e0dfdb;
-            padding: 40px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: row;
+            border-radius: 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            color: #333;
+            width: 100%;
+            height: 100%;
+            max-width: 900px;
+            min-height: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
             position: relative;
-            flex-grow: 1;
-            color: #2c2b29;
         }
 
-        .result-paper-header {
-            text-align: center;
+        .invoice-sidebar {
+            width: 32%;
+            background-color: #21695c;
+            color: #ffffff;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar-logo {
+            text-align: left;
+        }
+
+        .sidebar-logo img {
+            max-width: 80px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .sidebar-terms {
+            margin-top: auto;
+        }
+
+        .sidebar-terms h4 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .sidebar-terms ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .sidebar-terms ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .sidebar-terms ul li::before {
+            content: "☑";
+            position: absolute;
+            left: 0;
+            top: 0px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .invoice-main {
+            width: 68%;
+            padding: 40px !important;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        .invoice-header {
+            text-align: right;
             margin-bottom: 30px;
         }
 
-        .result-paper-header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 4px 0;
-            color: #1a1a1a;
-        }
-
-        .result-paper-header p {
-            font-size: 15px;
-            color: #8e8e93;
+        .invoice-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: #333333;
             margin: 0;
+            letter-spacing: 2px;
         }
 
-        .paper-section {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px dashed #cccccc;
-        }
-
-        .paper-section h3 {
-            font-size: 17px;
-            margin: 0 0 16px 0;
-            color: #4a4a4a;
-            font-weight: 700;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 8px;
-        }
-
-        .result-row {
+        .invoice-to-section {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
-            font-size: 16px;
-            border-bottom: 1px dashed #eaeaea;
-            padding-bottom: 12px;
-            color: #2c2b29;
+            margin-bottom: 20px;
         }
 
-        .result-row:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .invoice-to-info .label,
+        .invoice-meta .label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .invoice-to-info h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #21695c;
+        }
+
+        .contact-line {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .invoice-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: right;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-item .value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .invoice-table th {
+            background-color: #21695c;
+            color: #ffffff;
+            padding: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .invoice-table td {
+            padding: 12px;
+            font-size: 13px;
+            color: #444;
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-table tbody tr.row-even {
+            background-color: #e2e1e6;
+        }
+
+        .invoice-table tbody tr.row-odd {
+            background-color: #efeff1;
+        }
+
+        .invoice-table td.cat-col { /* Prevent cat column coloring if wanted */
+            background-color: white; 
+            border-right: 2px solid white;
+        }
+
+        .invoice-total-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .total-left {
+            width: 60%;
+        }
+
+        .total-left h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .comment-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+
+        .total-right {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        .sign-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .sign-role {
+            font-size: 11px;
+            background-color: #7b8882;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .invoice-footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #21695c;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .invoice-footer .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: bold;
         }
 
         .result-stars {
-            color: #ff9f0a;
+            color: #21695c !important;
             letter-spacing: 2px;
-            font-size: 16px;
-            text-shadow: none;
-        }
-
-        .comment-section {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            padding: 20px;
-            font-size: 16px;
-            line-height: 1.5;
-            min-height: 120px;
-            border: 1px dashed #cccccc;
-            color: #2c2b29;
-            margin-bottom: 24px;
-        }
-
-        .student-badge {
-            display: inline-flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
-            justify-content: center;
-            gap: 12px;
-            background: #f2f2f7;
-            padding: 12px 20px;
-            border-radius: 100px;
-            /* pill shape */
-            font-size: 14px;
-            font-weight: 600;
-            margin-top: auto;
-            border: 1px solid #cccccc;
-            color: #2c2b29;
-        }
-
-        .student-badge span span {
-            color: #000000;
-            font-weight: 700;
-            margin-left: 6px;
-            text-decoration: underline;
-            text-decoration-color: #d1d1d6;
+            font-size: 15px;
+            font-weight: bold;
+            text-shadow: none !important;
         }
 
         .button-group {
             display: flex;
             gap: 16px;
-            margin-top: auto;
+            margin-top: 20px;
         }
 
         @media print {
             @page {
-                size: A4;
+                size: A4 portrait;
                 margin: 0;
             }
 
-            html,
             body {
-                width: 210mm;
-                height: 297mm;
-                background: #f2f2f7 !important;
-                /* iOS light gray background */
-                color: #1c1c1e !important;
+                background: white !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
-                align-items: flex-start;
                 margin: 0 !important;
                 padding: 0 !important;
-                display: block;
-                overflow: hidden;
             }
 
-            .main-wrapper {
-                margin: 0;
-                padding: 0;
-                display: block;
-            }
-
-            .panel {
-                display: none !important;
-            }
-
+            .main-wrapper,
+            .panel,
+            .history-panel,
             .button-group {
                 display: none !important;
             }
 
             .result-panel {
+                display: block !important;
                 opacity: 1 !important;
                 transform: none !important;
-                flex: none !important;
-                width: 100% !important;
-                height: 100% !important;
-                display: block !important;
-                pointer-events: auto !important;
-                padding: 12mm !important;
-                /* Perfectly symmetrical 12mm outer margin */
+                padding: 0 !important;
                 margin: 0 !important;
-                box-sizing: border-box !important;
             }
 
-            /* Authentic iOS Card Style in Print */
             .result-paper {
-                box-sizing: border-box !important;
-                width: 100% !important;
-                height: 100% !important;
-                /* Fill the A4 page minus 12mm padding */
-                background-color: #fcfbf9 !important;
-                background-image: radial-gradient(#d5d4d0 1px, transparent 1px) !important;
-                background-size: 20px 20px !important;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
-                border: 1px solid #e0dfdb !important;
-                border-radius: 20px !important;
-                color: #2c2b29 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important; /* A4 exactly */
+                max-width: none !important;
                 margin: 0 !important;
-                padding: 16mm 18mm !important;
-                /* Exact balanced internal spacing */
                 display: flex !important;
-                flex-direction: column !important;
+                flex-direction: row !important;
+                page-break-inside: avoid;
             }
 
-            .result-paper-header h2 {
-                color: #1a1a1a !important;
-                font-weight: 700 !important;
+            .invoice-sidebar {
+                height: 297mm !important;
+                background-color: #21695c !important;
+                color: #ffffff !important;
+                padding-top: 15mm !important;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
             }
 
-            .result-paper-header p {
-                color: #8e8e93 !important;
+            .invoice-main {
+                height: 297mm !important;
+                padding-top: 15mm !important;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
             }
 
-            .paper-section {
-                background: rgba(255, 255, 255, 0.7) !important;
-                /* Subtle inner card */
-                border: 1px dashed #cccccc !important;
-                border-radius: 12px !important;
-                padding: 24px !important;
-                color: #2c2b29 !important;
-                margin-bottom: 20px !important;
+            .invoice-table th {
+                background-color: #21695c !important;
+                color: #ffffff !important;
             }
 
-            .paper-section h3 {
-                color: #4a4a4a !important;
-                font-size: 18px !important;
-                border-bottom: 2px solid #eaeaea !important;
-                padding-bottom: 12px !important;
-                margin-bottom: 16px !important;
-                font-weight: 700 !important;
+            .invoice-table tbody tr.row-even {
+                background-color: #e2e1e6 !important;
             }
 
-            .result-row {
-                border-bottom: 1px dashed #eaeaea !important;
-                color: #2c2b29 !important;
-                font-size: 17px !important;
-                margin-bottom: 12px !important;
-                padding-bottom: 12px !important;
-                font-weight: 500 !important;
-            }
-
-            .result-row:last-child {
-                border-bottom: none !important;
-                margin-bottom: 0 !important;
-                padding-bottom: 0 !important;
-            }
-
-            .comment-section {
-                background: rgba(255, 255, 255, 0.7) !important;
-                border: 1px dashed #cccccc !important;
-                border-radius: 12px !important;
-                padding: 24px !important;
-                color: #2c2b29 !important;
-                font-size: 17px !important;
-                flex-grow: 1 !important;
-                margin-bottom: 24px !important;
-                /* Ensure gap between comment and footer */
-            }
-
-            .student-badge {
-                background: #f2f2f7 !important;
-                border: 1px solid #cccccc !important;
-                border-radius: 100px !important;
-                padding: 12px 20px !important;
-                margin-top: auto !important;
-                color: #2c2b29 !important;
-                display: inline-flex !important;
-                flex-wrap: nowrap !important;
-                white-space: nowrap !important;
-                justify-content: center !important;
-                gap: 12px !important;
-                font-size: 14px !important;
-            }
-
-            .student-badge span span {
-                color: #000000 !important;
-                text-decoration: underline !important;
-                text-decoration-color: #d1d1d6 !important;
-            }
-
-            .result-stars {
-                color: #ff9f0a !important;
-                text-shadow: none !important;
+            .invoice-table tbody tr.row-odd {
+                background-color: #efeff1 !important;
             }
         }
     </style>
@@ -716,63 +794,99 @@
         <div class="result-panel" id="resultPanel">
             <!-- Simulated printable page -->
             <div class="result-paper" id="resultArea">
-                <div class="result-paper-header">
-                    <img src="./윌그로우로고.png" alt="Willgrow Logo" style="height: 50px; margin-bottom: 15px;">
-                    <h2>Presentation Evaluation</h2>
-                    <p id="sheetDate">Date: ...</p>
-                </div>
-
-                <div class="paper-section">
-                    <h3>Nonverbal Insights</h3>
-                    <div class="result-row">
-                        <span>Eye Contact</span>
-                        <span class="result-stars" id="sheet-eye">★★★☆☆</span>
+                <div class="invoice-sidebar">
+                    <div class="sidebar-logo">
+                        <img src="./윌그로우로고.png" alt="Willgrow Logo">
+                        <div class="company-name">Willgrow<br>Language<br>Institute</div>
                     </div>
-                    <div class="result-row">
-                        <span>Posture</span>
-                        <span class="result-stars" id="sheet-posture">★★★☆☆</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Confidence</span>
-                        <span class="result-stars" id="sheet-confidence">★★★☆☆</span>
+                    <div class="sidebar-terms">
+                        <h4>TERM & CONDITIONS</h4>
+                        <ul>
+                            <li><b>Preparation is Key</b><br>To learn, you have to listen.</li>
+                            <li><b>Continuous Effort</b><br>To improve, you have to try.</li>
+                            <li><b>Positive Attitude</b><br>Always maintain a growth mindset.</li>
+                            <li style="list-style: none; margin-top: 15px; font-style: italic; opacity: 0.7;">— Thomas Jefferson</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="paper-section">
-                    <h3>Verbal Insights</h3>
-                    <div class="result-row">
-                        <span>Proper Volume</span>
-                        <span class="result-stars" id="sheet-volume">★★★☆☆</span>
+                <div class="invoice-main">
+                    <div class="invoice-header">
+                        <h1 class="invoice-title">EVALUATION</h1>
                     </div>
-                    <div class="result-row">
-                        <span>Stress & Rhythm</span>
-                        <span class="result-stars" id="sheet-stress">★★★☆☆</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Fluency</span>
-                        <span class="result-stars" id="sheet-fluency">★★★☆☆</span>
-                    </div>
-                </div>
 
-                <div class="comment-section" id="sheet-comment">
-                    <!-- Comment appended here -->
-                </div>
+                    <div class="invoice-to-section">
+                        <div class="invoice-to-info">
+                            <span class="label">Evaluation To</span>
+                            <h2 id="sheet-name">...</h2>
+                            <div class="contact-line"><span>📚 Class:</span>  <strong id="sheet-class">...</strong></div>
+                            <div class="contact-line"><span>👩‍🏫 Teacher:</span>  <strong id="sheet-teacher">...</strong></div>
+                        </div>
+                        <div class="invoice-meta">
+                            <div class="meta-item">
+                                <span class="label">Date :</span>
+                                <span class="value" id="sheetDate">...</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div style="text-align: center;">
-                    <div class="student-badge">
-                        <span>Student <span id="sheet-name">...</span></span>
-                        <span>Class <span id="sheet-class">...</span></span>
-                        <span>Teacher <span id="sheet-teacher">...</span></span>
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">CATEGORY</th>
+                                <th style="width: 45%;">SKILL DESCRIPTION</th>
+                                <th style="width: 30%; text-align: right;">RATING</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Nonverbal -->
+                            <tr class="row-even">
+                                <td rowspan="3" class="cat-col" style="font-weight:bold; vertical-align: top;">Nonverbal<br>Insights</td>
+                                <td>Eye Contact</td>
+                                <td class="result-stars" id="sheet-eye" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+                            <tr class="row-odd">
+                                <td>Posture</td>
+                                <td class="result-stars" id="sheet-posture" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+                            <tr class="row-even">
+                                <td>Confidence</td>
+                                <td class="result-stars" id="sheet-confidence" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+
+                            <!-- Verbal -->
+                            <tr class="row-odd">
+                                <td rowspan="3" class="cat-col" style="font-weight:bold; vertical-align: top;">Verbal<br>Insights</td>
+                                <td>Proper Volume</td>
+                                <td class="result-stars" id="sheet-volume" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+                            <tr class="row-even">
+                                <td>Stress & Rhythm</td>
+                                <td class="result-stars" id="sheet-stress" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+                            <tr class="row-odd">
+                                <td>Fluency</td>
+                                <td class="result-stars" id="sheet-fluency" style="text-align: right;">★★★☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="invoice-total-section">
+                        <div class="total-left">
+                            <h4>TEACHER'S COMMENTS</h4>
+                            <div id="sheet-comment" class="comment-text">...</div>
+                        </div>
+                        <div class="total-right">
+                            <div class="signature">
+                                <div class="sign-name">Willgrow Language Institute</div>
+                                <div class="sign-role">MANAGER</div>
+                            </div>
+                        </div>
                     </div>
-                    <div
-                        style="margin-top: 16px; font-weight: 800; font-size: 16px; color: #8e8e93; letter-spacing: 1.5px; text-transform: uppercase;">
-                        Willgrow Language Institute
-                    </div>
-                    <div
-                        style="margin-top: 14px; font-style: italic; font-size: 14px; color: #5c5b59; line-height: 1.4;">
-                        “To learn, you have to listen. To improve, you have to try.”<br>
-                        <span style="font-size: 12px; margin-top: 6px; display: inline-block; color: #8e8e93;">—
-                            Thomas Jefferson</span>
+
+                    <div class="invoice-footer">
+                        <div class="footer-item">📞 031-8027-8877</div>
+                        <div class="footer-item">🌐 www.willgrow.co.kr</div>
                     </div>
                 </div>
             </div>
